@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DC 250 · July 4 Itinerary</title>
+<meta name="description" content="Washington, D.C. — America's 250th Birthday. Family itinerary, July 1–6, 2026.">
+<meta name="theme-color" content="#0C1B2A">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="DC 250">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0C1B2A 0%, #162D46 30%, #1B4965 100%);
+    background-attachment: fixed;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #F8FAFC;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .sys { font-family: system-ui, -apple-system, sans-serif; }
+  .header { text-align: center; padding: 40px 20px 20px; }
+  .flag { font-size: 48px; line-height: 1; margin-bottom: 8px; }
+  h1 { font-size: 28px; font-weight: 700; letter-spacing: .5px; margin: 0 0 4px; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,.3); }
+  .sub1 { font-size: 14px; color: #94B8D4; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 4px; }
+  .sub2 { font-size: 13px; color: #6B94B6; letter-spacing: 1px; }
+  .rule { width: 60px; height: 2px; margin: 16px auto 0; background: linear-gradient(90deg, transparent, #BF0A30, #FFFFFF, #002868, transparent); }
+  .tabs { display: flex; overflow-x: auto; padding: 0 12px 12px; gap: 6px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab { flex-shrink: 0; padding: 10px 14px; border-radius: 12px; border: 2px solid transparent; background: rgba(255,255,255,.06); color: #94A3B8; cursor: pointer; text-align: center; min-width: 80px; font-family: inherit; transition: all .2s ease; }
+  .tab .em { font-size: 18px; margin-bottom: 2px; }
+  .tab .d1 { font-size: 11px; font-weight: 600; letter-spacing: .5px; }
+  .tab .d2 { font-size: 9px; margin-top: 2px; opacity: .7; }
+  .dayhead { padding: 16px 20px 8px; }
+  .dayhead h2 { font-size: 22px; font-weight: 700; margin: 0 0 2px; color: #fff; }
+  .dayhead .dd { font-size: 13px; color: #94B8D4; }
+  .timeline { padding: 8px 20px 20px; }
+  .row { display: flex; gap: 12px; }
+  .tcol { display: flex; flex-direction: column; align-items: center; width: 52px; flex-shrink: 0; }
+  .ttime { font-size: 12px; font-weight: 600; color: #CBD5E1; text-align: center; line-height: 1.2; margin-bottom: 6px; min-height: 28px; display: flex; align-items: center; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .line { width: 2px; flex-grow: 1; min-height: 20px; background: rgba(255,255,255,.12); }
+  .card { flex: 1; background: rgba(255,255,255,.07); border-radius: 12px; padding: 14px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,.08); position: relative; }
+  .card.up { border-color: rgba(255,215,0,.3); }
+  .card.bk { border-color: rgba(74,222,128,.2); }
+  .card.flex { background: rgba(192,132,252,.08); border: 1px dashed rgba(192,132,252,.5); }
+  .badge { position: absolute; top: 10px; right: 10px; font-size: 8px; font-weight: 700; letter-spacing: 1px; color: #FFD700; background: rgba(255,215,0,.15); padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
+  .ctitle { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; line-height: 1.3; }
+  .csub { font-size: 13px; color: #B0C4D8; line-height: 1.5; }
+  .chips { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .chip { font-size: 11px; font-weight: 600; border-radius: 6px; padding: 5px 10px; letter-spacing: .3px; white-space: nowrap; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; border: 1px solid transparent; cursor: pointer; }
+  .chip-bk { color: #4ADE80; background: rgba(74,222,128,.12); border-color: rgba(74,222,128,.3); }
+  .chip-dir { color: #8EC5FF; background: rgba(96,165,250,.12); border-color: rgba(96,165,250,.35); }
+  .chip-tip { color: #FFD700; background: rgba(255,215,0,.1); border-color: rgba(255,215,0,.2); }
+  .chip-flex { color: #C084FC; background: rgba(192,132,252,.12); border-color: rgba(192,132,252,.3); }
+  .tipbody { margin-top: 8px; font-size: 12px; color: #E2E8F0; background: rgba(255,215,0,.08); border-left: 3px solid #FFD700; padding: 10px 12px; border-radius: 0 8px 8px 0; line-height: 1.6; }
+  .statusbody { margin-top: 8px; font-size: 12px; color: #E2E8F0; background: rgba(96,165,250,.08); border-left: 3px solid #60A5FA; padding: 10px 12px; border-radius: 0 8px 8px 0; line-height: 1.6; }
+  .slotbody { margin-top: 8px; font-size: 12px; color: #E2E8F0; background: rgba(192,132,252,.1); border-left: 3px solid #C084FC; padding: 10px 12px; border-radius: 0 8px 8px 0; line-height: 1.6; }
+  .panel { padding: 0 20px 20px; }
+  .panel-inner { background: rgba(255,255,255,.05); border-radius: 16px; padding: 20px; border: 1px solid rgba(255,255,255,.08); }
+  .panel h3 { font-size: 18px; font-weight: 700; margin: 0 0 16px; color: #fff; text-align: center; }
+  .tipgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .tipcell { background: rgba(255,255,255,.06); border-radius: 10px; padding: 12px; }
+  .tipcell .ti { font-size: 20px; margin-bottom: 4px; }
+  .tipcell .tt { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .tipcell .tx { font-size: 11px; color: #94B8D4; line-height: 1.5; }
+  .checkwrap { background: linear-gradient(135deg, rgba(191,10,48,.15), rgba(0,40,104,.15)); border-radius: 16px; padding: 20px; border: 1px solid rgba(255,255,255,.1); }
+  .checkwrap h3 { font-size: 18px; font-weight: 700; margin: 0 0 12px; color: #fff; text-align: center; }
+  .checklist { font-size: 13px; line-height: 2; }
+  .checkitem { display: flex; align-items: flex-start; gap: 8px; }
+  .flexwrap { background: linear-gradient(135deg, rgba(192,132,252,.12), rgba(139,92,246,.10)); border-radius: 16px; padding: 20px; border: 1px solid rgba(192,132,252,.28); }
+  .flexwrap h3 { font-size: 18px; font-weight: 700; margin: 0 0 2px; color: #fff; text-align: center; }
+  .flexwrap .eyebrow { font-size: 12px; color: #C4B5D8; text-align: center; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+  .flexintro { background: rgba(192,132,252,.08); border: 1px dashed rgba(192,132,252,.4); border-radius: 12px; padding: 14px; margin-bottom: 16px; font-size: 12.5px; color: #D9CCEA; line-height: 1.6; }
+  .flexcard { background: rgba(255,255,255,.07); border-radius: 12px; padding: 14px; margin-bottom: 12px; border: 1px solid rgba(192,132,252,.25); }
+  .flexcard.up { border-color: rgba(255,215,0,.3); }
+  .flexcard .from { font-size: 10px; color: #C4B5D8; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 6px; }
+  .walkin { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 12px; padding: 14px; margin-top: 4px; font-size: 12.5px; color: #B0C4D8; line-height: 1.6; }
+  .walkin b { color: #fff; }
+  .foot { text-align: center; padding: 8px 20px 40px; font-size: 11px; color: #5f7f9c; }
+  strong.hl { color: #F0E9F7; }
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const DAYS = [
+  {
+    date: "Wednesday, July 1",
+    label: "Arrival Day",
+    emoji: "✈️",
+    color: "#1B4965",
+    events: [
+      {
+        time: "10:35 AM",
+        title: "Fly MCO → IAD",
+        subtitle: "Frontier F9 4230 · Arrive 12:53 PM",
+        type: "travel",
+        icon: "✈️",
+        mapQuery: "Orlando International Airport MCO",
+      },
+      {
+        time: "2:45 PM",
+        title: "Check in: Grand Hyatt Washington",
+        subtitle: "1000 H Street NW · Drop bags and head out — People's House tickets at 3:30!",
+        type: "hotel",
+        icon: "🏨",
+        booked: true,
+        mapQuery: "Grand Hyatt Washington, 1000 H St NW, Washington DC",
+        tip: "Ask about a room upgrade — Grand Hyatt often has suites available midweek. Drop the bags quickly; you can settle in properly after the Monuments tour tonight.",
+      },
+      {
+        time: "3:30 PM",
+        title: "The People's House ★",
+        subtitle: "BOOKED: A White House experience · 1700 Pennsylvania Ave NW. State-of-the-art interactive exhibits bringing the White House to life — a 3D Oval Office, immersive rooms, and 250 years of history.",
+        type: "activity",
+        icon: "🏛️",
+        upgraded: true,
+        booked: true,
+        mapQuery: "The People's House, 1700 Pennsylvania Ave NW, Washington DC",
+        tip: "This brand-new experience center (opened 2024) is a perfect intro to DC for the kids before the real history begins. Free timed tickets — allow 60–90 minutes. Located steps from the actual White House, so grab a family photo out front afterward.",
+      },
+      {
+        time: "5:30 PM",
+        title: "Dinner at Old Ebbitt Grill",
+        subtitle: "675 15th St NW · DC's most iconic restaurant, steps from the White House. Classic American fare, oysters & cold beer in a gorgeous Victorian setting.",
+        type: "food",
+        icon: "🦪",
+        booked: true,
+        mapQuery: "Old Ebbitt Grill, 675 15th St NW, Washington DC",
+        tip: "Old Ebbitt is a DC institution since 1856. Their oysters and burgers are legendary. Great for kids too — huge menu, lively atmosphere. Just a short walk to the Monuments by Moonlight departure point.",
+      },
+      {
+        time: "8:00 PM",
+        title: "Monuments by Moonlight Tour ★",
+        subtitle: "Guided evening trolley tour of illuminated monuments. Magical for the whole family — and easy on little legs!",
+        type: "activity",
+        icon: "🌙",
+        upgraded: true,
+        booked: true,
+        mapQuery: "National Mall, Washington DC",
+        tip: "Confirm the exact meeting point from your booking — trolley tours vary (many depart near Union Station or the White House). The monuments are breathtaking at night and far less crowded. Bring jackets — it cools down!",
+      },
+    ],
+  },
+  {
+    date: "Thursday, July 2",
+    label: "Museums & Discovery",
+    emoji: "🏛️",
+    color: "#5FA8D3",
+    events: [
+      {
+        time: "8:30 AM",
+        title: "🍩 Astro Doughnuts & Fried Chicken",
+        subtitle: "1308 G St NW · 5 min walk from hotel. Monthly rotating flavors, incredible crème brûlée & maple bacon doughnuts. Grab a fried chicken biscuit too!",
+        type: "food",
+        icon: "🍩",
+        mapQuery: "Astro Doughnuts & Fried Chicken, 1308 G St NW, Washington DC",
+        tip: "Astro rotates creative flavors monthly — think PB&J, crème brûlée, and maple bacon. They also make a killer breakfast sandwich with a doughnut as the bun. The kids will lose their minds. Get there when they open to beat the line!",
+      },
+      {
+        time: "10:00 AM",
+        title: "Museum of the Bible ★",
+        subtitle: "Six floors of immersive exhibits, 1,000+ artifacts spanning 4,000 years. Walk across the Red Sea, explore a 1st-century Nazareth village.",
+        type: "activity",
+        icon: "📖",
+        upgraded: true,
+        booked: true,
+        mapQuery: "Museum of the Bible, 400 4th St SW, Washington DC",
+        tip: "Six floors to explore before your noon lunch — prioritize the Washington Revelations flying theater and the rooftop garden with Capitol views. Budget your time so you're back down to Manna by noon.",
+      },
+      {
+        time: "12:00 PM",
+        title: "Lunch at Manna — Museum of the Bible",
+        subtitle: "On-site restaurant at the Museum of the Bible. Relax and recharge before the Dead Sea Scrolls.",
+        type: "food",
+        icon: "🍽️",
+        mapQuery: "Museum of the Bible, 400 4th St SW, Washington DC",
+      },
+      {
+        time: "1:00 PM",
+        title: "Dead Sea Scrolls Exhibit ★",
+        subtitle: "BOOKED: 1 PM timed entry. Some of the most significant surviving manuscripts in human history — an extraordinary experience on the eve of America's 250th.",
+        type: "activity",
+        icon: "📜",
+        upgraded: true,
+        booked: true,
+        mapQuery: "Museum of the Bible, 400 4th St SW, Washington DC",
+        tip: "The Dead Sea Scrolls gallery is climate-controlled and deliberately slow-paced — take your time. Allow 45–60 minutes. You'll exit with plenty of time to Metro to Air & Space by 3:30 PM.",
+      },
+      {
+        time: "3:30 PM",
+        title: "National Air & Space Museum ★",
+        subtitle: "BOOKED: 3 PM timed entry · Freshly renovated for its 50th anniversary! All new galleries open July 1. See the Spirit of St. Louis, Apollo Lunar Module, X-15, and touch a real moon rock.",
+        type: "activity",
+        icon: "🚀",
+        upgraded: true,
+        booked: true,
+        mapQuery: "National Air and Space Museum, 600 Independence Ave SW, Washington DC",
+        tip: "Reserve FREE timed-entry passes in advance — they go fast for July! Don't miss the new IMAX Theater (buy tickets ahead) and the \"Futures in Space\" gallery. Plan 2–3 hours. The Blue Origin New Shepard capsule is brand new to the museum.",
+      },
+      {
+        time: "6:00 PM",
+        title: "Dinner at the Great American State Fair 🎡",
+        subtitle: "National Mall · Graze the 50-state food pavilions — Maine lobster rolls, Texas BBQ, Hawaiian shaved ice, and more. A once-in-250-years experience!",
+        type: "food",
+        icon: "🌽",
+        mapQuery: "National Mall, Washington DC",
+        tip: "Kids can collect stamps from each state's pavilion and earn commemorative prizes. The 110-ft Ferris wheel has incredible Mall views. Graze between pavilions — no need for a sit-down dinner tonight!",
+      },
+    ],
+  },
+  {
+    date: "Friday, July 3",
+    label: "Golf, History & Music",
+    emoji: "📖",
+    color: "#274C77",
+    events: [
+      {
+        time: "7:00 AM",
+        title: "☕ Tatte Bakery & Cafe",
+        subtitle: "Penn Quarter · Grab-and-go pastries, shakshuka, egg sandwiches & excellent coffee. Quick fuel before tee time!",
+        type: "food",
+        icon: "🥐",
+        mapQuery: "Tatte Bakery & Cafe, Penn Quarter, Washington DC",
+        tip: "Tatte opens early and is fast — perfect for a pre-golf bite. Their halva croissant and breakfast sandwiches are incredible. Grab coffees to go!",
+      },
+      {
+        time: "8:00 AM",
+        title: "⛳ Tee Time — East Potomac Golf Links ★",
+        subtitle: "BOOKED: Blue Course (Back 9 · most scenic holes) · Hains Point · Cart available onsite · Reservation #425269227. Play golf with the Washington Monument & Jefferson Memorial as your backdrop!",
+        type: "activity",
+        icon: "⛳",
+        upgraded: true,
+        booked: true,
+        mapQuery: "East Potomac Golf Links, 972 Ohio Dr SW, Washington DC",
+        tip: "Playing the back 9 of the Blue Course — the most scenic stretch at Hains Point. Carts are not pre-bookable online; grab one in the pro shop when you arrive. A 9-hole round with a cart should take about 2 hours. Bring sunscreen, water, and hats — Hains Point is fully exposed to the sun. Views of the Washington Monument from every hole!",
+      },
+      {
+        time: "10:30 AM",
+        title: "🍔 Lunch at The Potomac Grille",
+        subtitle: "On-site clubhouse grill at East Potomac. Relaxed, casual, well-earned after your round.",
+        type: "food",
+        icon: "🍔",
+        mapQuery: "East Potomac Golf Links, 972 Ohio Dr SW, Washington DC",
+      },
+      {
+        time: "12:00 PM",
+        title: "Quick Break at the Hotel",
+        subtitle: "Shower off the golf, change into evening clothes, grab water bottles. Big night ahead!",
+        type: "hotel",
+        icon: "🏨",
+        mapQuery: "Grand Hyatt Washington, 1000 H St NW, Washington DC",
+      },
+      {
+        time: "2:00 PM",
+        title: "🪖 Arlington National Cemetery — Tomb of the Unknown Soldier ★",
+        subtitle: "Metro to Arlington Cemetery station. Visit the Tomb, witness the Changing of the Guard (every 30 min in summer), JFK gravesite & eternal flame.",
+        type: "activity",
+        icon: "🇺🇸",
+        upgraded: true,
+        mapQuery: "Arlington National Cemetery Welcome Center, Arlington VA",
+        tip: "Cemetery is open until 7 PM in summer. The Changing of the Guard happens every 30 minutes April–September — arrive 15 min early for a good spot. Also visit JFK's gravesite with the eternal flame and Arlington House (Robert E. Lee's former home). Bring tissues — this is profoundly moving on the eve of America's birthday. The tram tour ($15/person, kids under 4 free) covers all major sites — last departure is at 4:00 PM and returns at 5:00 PM.",
+      },
+      {
+        time: "5:30 PM",
+        title: "Dinner at Founding Farmers DC ★",
+        subtitle: "1924 Pennsylvania Ave NW · Farm-to-table American with AC. Stellar kids menu — a perfect pre-concert dinner.",
+        type: "food",
+        icon: "🌾",
+        upgraded: true,
+        booked: true,
+        mapQuery: "Founding Farmers DC, 1924 Pennsylvania Ave NW, Washington DC",
+        tip: "Founding Farmers is one of DC's most beloved restaurants — farm-to-table American with a stellar kids menu. The 1924 Pennsylvania Ave location is 3 blocks from the White House. A perfect pre-concert dinner.",
+      },
+      {
+        time: "8:00 PM",
+        title: "🎵 A Capitol Fourth — DRESS REHEARSAL ★",
+        subtitle: "West Lawn of the U.S. Capitol. The FULL concert with National Symphony Orchestra and celebrity performers — but far less crowded than July 4!",
+        type: "activity",
+        icon: "🎻",
+        upgraded: true,
+        mapQuery: "U.S. Capitol West Lawn, Washington DC",
+        tip: "INSIDER TIP: Same concert broadcast on PBS the next night, but with a fraction of the crowd. Rehearsal runs 8–10 PM. Gates open at 3 PM; arrive 60–90 min early for good lawn seating. Bring a blanket and low chairs. Security checks all bags. Metro: Federal Center SW station. No fireworks at rehearsal — those are on the 4th!",
+      },
+    ],
+  },
+  {
+    date: "Saturday, July 4",
+    label: "The Big Day — America's 250th! 🇺🇸",
+    emoji: "🎆",
+    color: "#BF0A30",
+    events: [
+      {
+        time: "7:30 AM",
+        title: "🧇 Lincoln's Waffle Shop",
+        subtitle: "504 10th St NW · 6 min walk. A no-frills DC legend near Ford's Theatre. Famous banana pancakes, crispy waffles & big diner breakfasts at great prices.",
+        type: "food",
+        icon: "🥞",
+        mapQuery: "Lincoln's Waffle Shop, 504 10th St NW, Washington DC",
+        tip: "This old-school greasy spoon has been feeding DC locals for decades — it's right near Ford's Theatre where Lincoln was shot, which makes for a great history moment with the kids. Cash-friendly prices, huge portions. Get there early — today is going to be epic and you need fuel!",
+      },
+      {
+        time: "8:30 AM",
+        title: "Get to National Archives Steps EARLY",
+        subtitle: "Walk/Metro to the Archives. Find a spot on or near the steps for the reading ceremony.",
+        type: "activity",
+        icon: "📍",
+        mapQuery: "National Archives Museum, 701 Constitution Ave NW, Washington DC",
+        tip: "Seating on the steps is first-come, first-serve. Arriving by 8:30 AM gives you a great vantage point. Bring water, hats, a small blanket to sit on, and patience — it'll be a big crowd!",
+      },
+      {
+        time: "10:00 AM",
+        title: "Declaration of Independence Reading Ceremony",
+        subtitle: "On the steps of the National Archives. Re-enactors, historical figures, and the ceremonial reading — expanded for the 250th with sign language and translations.",
+        type: "activity",
+        icon: "🔔",
+        mapQuery: "National Archives Museum, 701 Constitution Ave NW, Washington DC",
+        tip: "This is the quintessential July 4th experience — hand over heart, reading the document on its 250th birthday, right where the original is housed. Goosebumps guaranteed.",
+      },
+      {
+        time: "11:00 AM",
+        title: "National Archives — Declaration of Independence ★",
+        subtitle: "BOOKED: 11 AM timed entry. See the ORIGINAL Declaration on its 250th birthday. New \"Free and Independent\" exhibition with rare artifacts.",
+        type: "activity",
+        icon: "📜",
+        upgraded: true,
+        booked: true,
+        mapQuery: "National Archives Museum, 701 Constitution Ave NW, Washington DC",
+        tip: "Head straight inside after the reading ceremony wraps — your 11 AM entry lines up perfectly. Also see the Constitution, Bill of Rights, and newly displayed Emancipation Proclamation & 19th Amendment!",
+      },
+      {
+        time: "11:45 AM",
+        title: "July 4th Parade",
+        subtitle: "Watch from near the National Archives Museum along Constitution Ave.",
+        type: "activity",
+        icon: "🥁",
+        mapQuery: "Constitution Ave NW, Washington DC",
+      },
+      {
+        time: "1:30 PM",
+        title: "Arrive at the U.S. Capitol",
+        subtitle: "Arrive 60 minutes early per instructions from your State Representative's office. Allow time for security screening and check-in.",
+        type: "activity",
+        icon: "🏛️",
+        mapQuery: "U.S. Capitol Visitor Center, First St SE, Washington DC",
+        tip: "Follow all instructions provided by your Representative's office exactly. Bring government-issued photo ID for every adult. Security is thorough — no large bags, no food or drink. A incredible privilege to tour the Capitol on America's 250th birthday.",
+      },
+      {
+        time: "2:30 PM",
+        title: "U.S. Capitol Building Tour ★",
+        subtitle: "BOOKED: Private tour arranged through your State Representative's office. An extraordinary behind-the-scenes experience on America's 250th birthday.",
+        type: "activity",
+        icon: "🇺🇸",
+        upgraded: true,
+        booked: true,
+        mapQuery: "U.S. Capitol Visitor Center, First St SE, Washington DC",
+        tip: "Congressional tours go places the public can't access on their own — the House and Senate chambers, Statuary Hall, and the Crypt. Your kids will remember this forever. Ask your guide about the history of the building on July 4th specifically.",
+      },
+      {
+        time: "5:30 PM",
+        title: "Stake Out Fireworks Spot",
+        subtitle: "Head to the National Mall early. The area between the Washington Monument and Lincoln Memorial offers the best views.",
+        type: "activity",
+        icon: "📍",
+        mapQuery: "Washington Monument, Washington DC",
+        tip: "This year's fireworks are being billed as the largest pyrotechnics display in history. Expect massive crowds — over a million people. Bring a blanket, snacks, games for the kids, and PATIENCE. The Reflecting Pool area gives stunning reflections. Don't forget ear protection for your 6-year-old!",
+      },
+      {
+        time: "7:00 PM",
+        title: "Salute to America 250 — Evening Celebrations ★",
+        subtitle: "Headline performances, military flyovers, musical acts, and decade-spanning entertainment on the National Mall.",
+        type: "activity",
+        icon: "🎵",
+        upgraded: true,
+        mapQuery: "National Mall, Washington DC",
+      },
+      {
+        time: "9:00 PM+",
+        title: "250th Anniversary Fireworks ★",
+        subtitle: "The largest fireworks display in American history. Launched from both sides of the Reflecting Pool. This is the moment.",
+        type: "activity",
+        icon: "🎆",
+        upgraded: true,
+        mapQuery: "Lincoln Memorial Reflecting Pool, Washington DC",
+        tip: "After the show, don't rush to Metro. Let the initial crowd clear (30–45 min). Walk toward your hotel via side streets. The walk from the Mall to Grand Hyatt is about 25 minutes and is magical with the energy of the night.",
+      },
+    ],
+  },
+  {
+    date: "Sunday, July 5",
+    label: "Baseball & the Ballpark",
+    emoji: "⚾",
+    color: "#62929E",
+    events: [
+      {
+        time: "9:00 AM",
+        title: "🥐 maman — Penn Quarter",
+        subtitle: "Charming French-American café in the heart of old downtown. Famous nutty chocolate chip cookie, pastries, egg sandwiches & lattes.",
+        type: "food",
+        icon: "🍪",
+        mapQuery: "maman, Penn Quarter, Washington DC",
+        tip: "maman feels like a cozy Parisian home — antique décor, fresh flowers, and incredible baked goods. Their chocolate chip cookie is legendary. Great coffee for the parents, warm pastries for the kids. A perfect lazy morning after July 4th!",
+      },
+      {
+        time: "Open until 12:00 PM",
+        title: "🃏 Morning is open — pull from Flexible Options",
+        subtitle: "After breakfast you have a free block before the 1 PM game. The Lincoln Memorial + Undercroft is the natural fit here (see Flexible Options below the daily plan), but it's your call.",
+        type: "flexnote",
+        icon: "🃏",
+      },
+      {
+        time: "12:00 PM",
+        title: "Head to Nationals Park",
+        subtitle: "Metro: Green/Yellow Line to Navy Yard-Ballpark station. ~15 min from Metro Center. Grab a hot dog and find your seats!",
+        type: "activity",
+        icon: "🚇",
+        mapQuery: "Nationals Park, 1500 South Capitol St SE, Washington DC",
+        tip: "Nationals Park is one of the best ballparks in MLB — great sight lines, excellent food, and a fantastic family atmosphere. Arrive 30–45 min early to explore the park and grab food before first pitch. Kids will love the racing presidents between innings!",
+      },
+      {
+        time: "1:00 PM",
+        title: "Washington Nationals vs. Pittsburgh Pirates ★",
+        subtitle: "BOOKED: Nationals Park · 1500 S Capitol St SE. America's pastime on the day after America's 250th — a perfect family afternoon.",
+        type: "activity",
+        icon: "⚾",
+        upgraded: true,
+        booked: true,
+        mapQuery: "Nationals Park, 1500 South Capitol St SE, Washington DC",
+        tip: "Nationals Park has great food options beyond the usual ballpark fare — look for the crab cake stand and the local DC vendors along the concourse. The kids can track the game on the scoreboard and cheer for the Nats!",
+      },
+      {
+        time: "4:30 PM",
+        title: "Dinner near Navy Yard / The Wharf",
+        subtitle: "Post-game dinner near the ballpark or a short walk to The Wharf. Plenty of family-friendly options — nothing booked, keep it flexible based on energy.",
+        type: "food",
+        icon: "🍽️",
+        mapQuery: "The Wharf, Washington DC",
+        tip: "The Wharf is a ~10 min walk or short Uber from Nationals Park and has a great riverfront strip of restaurants. Or stay in Navy Yard near the stadium. Play it by ear depending on how the kids are holding up after a full day.",
+      },
+    ],
+  },
+  {
+    date: "Monday, July 6",
+    label: "Departure Day",
+    emoji: "🏠",
+    color: "#6B7280",
+    events: [
+      {
+        time: "8:00 AM",
+        title: "🍩 Good Doughnuts & Café — Penn Quarter",
+        subtitle: "Full breakfast menu plus incredible doughnuts, coffee, and pastries. A perfect last-morning treat before heading home.",
+        type: "food",
+        icon: "🍩",
+        mapQuery: "Good Doughnuts & Cafe, Penn Quarter, Washington DC",
+        tip: "Good Doughnuts has expanded across DC because they're that good. Full savory breakfast plus doughnuts — best of both worlds for your final morning. The kids can pick their favorite flavors as a sweet goodbye to DC!",
+      },
+      {
+        time: "10:00 AM",
+        title: "Check Out: Grand Hyatt Washington",
+        subtitle: "Store luggage with the bell desk — you have the whole morning before the airport.",
+        type: "hotel",
+        icon: "🏨",
+        mapQuery: "Grand Hyatt Washington, 1000 H St NW, Washington DC",
+      },
+      {
+        time: "Open until 3:30 PM",
+        title: "🃏 Whole day is open — pull from Flexible Options",
+        subtitle: "Bags are with the bell desk and your flight isn't until 7:18 PM. This is your biggest open block: Nat Geo Museum, Washington Monument, or Arts & Industries all live in Flexible Options below the daily plan. Leave the Mall by 3:30 PM for the airport.",
+        type: "flexnote",
+        icon: "🃏",
+      },
+      {
+        time: "3:30 PM",
+        title: "Head to IAD",
+        subtitle: "Allow 90 min to get to Dulles — direct Uber from the Mall (~45 min) or Metro Silver Line.",
+        type: "travel",
+        icon: "🚗",
+        mapQuery: "Washington Dulles International Airport IAD",
+        tip: "Uber from the Mall to IAD runs about 40–50 minutes depending on traffic. Give yourself a buffer — IAD security can be slow. Leave the Mall no later than 3:30 PM for a 7:18 PM flight.",
+      },
+      {
+        time: "7:18 PM",
+        title: "Fly IAD → MCO",
+        subtitle: "Frontier F9 4355 · Arrive 9:45 PM EDT",
+        type: "travel",
+        icon: "✈️",
+        mapQuery: "Washington Dulles International Airport IAD",
+      },
+    ],
+  },
+];;
+const FLEXIBLE = [
+  {
+    icon: "🏛️",
+    title: "Lincoln Memorial + NEW Undercroft Museum ★",
+    from: "was Sun July 5, 10:30 AM",
+    subtitle: "Lincoln himself is free, open 24/7, and needs no ticket. Beneath him, the brand-new Undercroft Museum fills 15,000 sq ft of the century-old foundation with immersive exhibits and a projection theater.",
+    mapQuery: "Lincoln Memorial, Washington DC",
+    status: "Undercroft needs a FREE timed ticket via recreation.gov, or same-day from the kiosk (~8:45 AM). Verify it's actually open on your dates — it's a new-for-2026 opening.",
+    slot: "Best morning: Sun July 5, 9 AM–12 PM (before the 1 PM game) — that block is now open. Lincoln alone is a great whim stop with zero booking; only the Undercroft needs planning.",
+  },
+  {
+    icon: "🌍",
+    title: "National Geographic Museum of Exploration ★",
+    from: "was Mon July 6, 9:30 AM",
+    subtitle: "New ~100,000 sq ft museum: immersive exploration tech, wildlife encounters, a 400-seat theater, and an outdoor courtyard. Near Dupont/downtown — not on the Mall.",
+    mapQuery: "National Geographic Museum, 1145 17th St NW, Washington DC",
+    status: "PAID, not booked. Tickets at moe.nationalgeographic.org. Advertised opening was June 26, 2026 — verify it opened on schedule and buy ahead, since opening weeks may sell out.",
+    slot: "This is a half-day, not a drop-in. Best home: Mon July 6, the open 10 AM–3:30 PM block. Also your strongest 'the girls want MORE museums' or rain-day pick.",
+  },
+  {
+    icon: "🗽",
+    title: "Washington Monument ★",
+    from: "was Mon July 6 fallback, 11:00 AM",
+    subtitle: "The 500-ft observation deck — a clean panoramic payoff and a short visit (~45 min).",
+    mapQuery: "Washington Monument, Washington DC",
+    status: "FREE timed tickets via recreation.gov (30 days out at 10 AM ET, plus a small same-day batch, ~$1 fee). Not booked — your preferred slots weren't available. Closed July 4 and parts of July 3.",
+    slot: "Slot in only if a ticket frees up. Quick enough to pair with Arts & Industries on the July 6 open block.",
+  },
+  {
+    icon: "🎨",
+    title: "Smithsonian Arts & Industries Building",
+    from: "was Mon July 6, 12:00 PM",
+    subtitle: "A gorgeous historic Smithsonian hall that rarely opens to the public, running special 250th creative programming this summer. Right on the Mall.",
+    mapQuery: "Arts and Industries Building, 900 Jefferson Dr SW, Washington DC",
+    status: "FREE, no ticket — just walk in. The lowest-friction option on this list.",
+    slot: "Any Mall visit, 45–60 min. The easiest thing to grab on a whim, and an easy pairing with the Washington Monument on July 6.",
+  },
+];;
+const TIPS = [
+  { icon: "🎫", title: "Book NOW", text: "Timed-entry passes for Air & Space, National Archives, and Nat Geo Museum will sell out for July 4th week. Reserve them the moment they become available." },
+  { icon: "🚇", title: "Use Metro", text: "Park your car and take the Metro everywhere. Grand Hyatt is right above Metro Center station. Get SmarTrip cards for the family." },
+  { icon: "☀️", title: "Beat the Heat", text: "DC in July averages 90°F+. Pack sunscreen, hats, reusable water bottles, and plan indoor breaks. The hotel pool is your best friend." },
+  { icon: "👂", title: "Ear Protection", text: "Bring child-sized ear protection for your 6-year-old for the fireworks — it will be LOUD, especially for the 250th." },
+  { icon: "📱", title: "Download Apps", text: "Get the Smithsonian, Explore250, and National Mall apps. The Explore250 app lets you collect digital 'stamps' at landmarks!" },
+  { icon: "🎒", title: "Pack Smart", text: "Bring a lightweight backpack with snacks, water, a phone charger, sunscreen, and a light rain jacket. July = afternoon thunderstorms." },
+];;
+const CHECKLIST = [
+  { text: "Washington Monument — Flex option, booking window opens June 6 at 10 AM ET (recreation.gov)", booked: false },
+  { text: "Grand Hyatt Washington — hotel reservation (July 1–6)", booked: true },
+  { text: "The People's House — 3:30 PM (July 1)", booked: true },
+  { text: "Old Ebbitt Grill — dinner (July 1)", booked: true },
+  { text: "Monuments by Moonlight Tour — evening (July 1)", booked: true },
+  { text: "Museum of the Bible — tickets + Dead Sea Scrolls (July 2)", booked: true },
+  { text: "National Air & Space Museum — 3 PM timed entry (July 2)", booked: true },
+  { text: "East Potomac Golf — Blue Course, Back 9, 8:00 AM with cart (July 3)", booked: true },
+  { text: "Arlington Cemetery Tram Tour — arlingtontours.com (July 3)", booked: false },
+  { text: "Founding Farmers — dinner (July 3)", booked: true },
+  { text: "National Archives — 11 AM timed entry (July 4)", booked: true },
+  { text: "U.S. Capitol Building Tour — 2:30 PM via State Rep's office (July 4)", booked: true },
+  { text: "Nationals vs. Pirates — 1 PM (July 5)", booked: true },
+  { text: "Lincoln Undercroft Museum — Flex option, free timed ticket (recreation.gov)", booked: false },
+  { text: "National Geographic Museum — Flex option, moe.nationalgeographic.org", booked: false },
+  { text: "Explore250 app + SmarTrip Metro cards", booked: false },
+];
+const FLEX_COLOR = "#C084FC";
+const mapsUrl = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+
+let activeDay = 0;
+const openTips = {};
+
+function dirChip(q){ return '<a class="chip chip-dir" target="_blank" rel="noopener noreferrer" href="'+mapsUrl(q)+'">📍 Directions</a>'; }
+
+function eventCard(ev, idx){
+  const isFlexNote = ev.type === "flexnote";
+  const key = activeDay + "-" + idx;
+  const open = !!openTips[key];
+  const dotColor = isFlexNote ? FLEX_COLOR : (ev.upgraded ? "#FFD700" : DAYS[activeDay].color);
+  const dotBorder = isFlexNote ? FLEX_COLOR : (ev.upgraded ? "#FFD700" : "rgba(255,255,255,.3)");
+  const dotShadow = ev.upgraded ? "0 0 8px rgba(255,215,0,.5)" : (isFlexNote ? "0 0 8px rgba(192,132,252,.5)" : "none");
+  const last = idx === DAYS[activeDay].events.length - 1;
+  let cls = "card"; if(isFlexNote) cls += " flex"; else if(ev.upgraded) cls += " up"; else if(ev.booked) cls += " bk";
+
+  let chips = "";
+  if(ev.booked || ev.tip || ev.mapQuery){
+    chips += '<div class="chips sys">';
+    if(ev.booked) chips += '<span class="chip chip-bk">✓ Booked</span>';
+    if(ev.mapQuery) chips += dirChip(ev.mapQuery);
+    if(ev.tip) chips += '<button class="chip chip-tip" data-tip="'+key+'">'+(open?"Hide Tip ▲":"Pro Tip ▼")+'</button>';
+    chips += '</div>';
+  }
+  let tipHtml = (ev.tip && open) ? '<div class="tipbody sys">💡 '+ev.tip+'</div>' : '';
+
+  return '<div class="row">'
+    + '<div class="tcol"><div class="ttime">'+ev.time+'</div>'
+    + '<div class="dot" style="background:'+dotColor+';border:2px solid '+dotBorder+';box-shadow:'+dotShadow+'"></div>'
+    + (last ? '' : '<div class="line"></div>') + '</div>'
+    + '<div class="'+cls+'">'
+    + (ev.upgraded ? '<div class="badge sys">★ Upgraded</div>' : '')
+    + '<div class="ctitle" style="'+(ev.upgraded?'padding-right:80px':'')+'">'+ev.icon+' '+ev.title+'</div>'
+    + '<div class="csub">'+ev.subtitle+'</div>'
+    + chips + tipHtml
+    + '</div></div>';
+}
+
+function flexCard(item, i){
+  const key = "flex-" + i;
+  const open = !!openTips[key];
+  const up = item.title.indexOf("★") >= 0;
+  let body = "";
+  if(open){
+    body = '<div class="statusbody sys">🎟️ <strong>Status:</strong> '+item.status+'</div>'
+         + '<div class="slotbody sys">🕒 <strong>When to slot it in:</strong> '+item.slot+'</div>';
+  }
+  return '<div class="flexcard'+(up?' up':'')+'">'
+    + '<div class="ctitle">'+item.icon+' '+item.title+'</div>'
+    + '<div class="from sys">'+item.from+'</div>'
+    + '<div class="csub" style="margin-bottom:8px">'+item.subtitle+'</div>'
+    + '<div class="chips sys">'+dirChip(item.mapQuery)
+    + '<button class="chip chip-flex" data-tip="'+key+'">'+(open?"Hide Details ▲":"When to slot it in ▼")+'</button></div>'
+    + body + '</div>';
+}
+
+function render(){
+  const d = DAYS[activeDay];
+  let html = '';
+  html += '<div class="header"><div class="flag">🇺🇸</div>'
+    + '<h1>Washington, D.C.</h1>'
+    + '<div class="sub1">America\'s 250th Birthday</div>'
+    + '<div class="sub2">July 1 – 6, 2026 · Family of 4</div>'
+    + '<div class="rule"></div></div>';
+
+  html += '<div class="tabs">';
+  DAYS.forEach((day, i) => {
+    const act = i === activeDay;
+    const style = act
+      ? 'border:2px solid '+day.color+';background:linear-gradient(135deg,'+day.color+'22,'+day.color+'44);color:#fff;'
+      : '';
+    html += '<button class="tab" style="'+style+'" data-tab="'+i+'">'
+      + '<div class="em">'+day.emoji+'</div>'
+      + '<div class="d1">'+day.date.split(",")[0].toUpperCase()+'</div>'
+      + '<div class="d2">'+day.date.split(", ")[1]+'</div></button>';
+  });
+  html += '</div>';
+
+  html += '<div class="dayhead"><h2>'+d.label+'</h2><div class="dd">'+d.date+', 2026</div></div>';
+  html += '<div class="timeline">' + d.events.map(eventCard).join('') + '</div>';
+
+  // Tips
+  html += '<div class="panel"><div class="panel-inner"><h3>🎒 Essential Trip Tips</h3><div class="tipgrid">';
+  TIPS.forEach(t => {
+    html += '<div class="tipcell sys"><div class="ti">'+t.icon+'</div><div class="tt">'+t.title+'</div><div class="tx">'+t.text+'</div></div>';
+  });
+  html += '</div></div></div>';
+
+  // Checklist
+  html += '<div class="panel"><div class="checkwrap"><h3>📋 Book Ahead Checklist</h3><div class="checklist sys">';
+  CHECKLIST.forEach(item => {
+    const mark = item.booked ? '<span style="color:#4ADE80;flex-shrink:0">✓</span>' : '<span style="color:#FFD700;flex-shrink:0">☐</span>';
+    const col = item.booked ? '#86EFAC' : '#B0C4D8';
+    html += '<div class="checkitem">'+mark+'<span style="color:'+col+'">'+item.text+'</span></div>';
+  });
+  html += '</div></div></div>';
+
+  // Flexible options
+  html += '<div class="panel"><div class="flexwrap"><h3>🃏 Flexible Options</h3>'
+    + '<div class="eyebrow sys">Wild cards — slot in on a whim</div>'
+    + '<div class="flexintro sys">None of these are booked, and none are on July 3 or 4 (those days stay locked). They\'re your bench: pull one in if a plan falls through, if the girls want more museums, or drop them entirely if everyone\'s museum\'d out. Your two open windows are <strong class="hl">Sun July 5, 9 AM–12 PM</strong> and <strong class="hl">Mon July 6, 10 AM–3:30 PM</strong>.</div>';
+  html += FLEXIBLE.map(flexCard).join('');
+  html += '<div class="walkin sys"><b>🏛️ If they want EVEN more museums</b><br>The big Smithsonians on the Mall — Natural History, American History, and their neighbors — are free and need no reservation. They\'re the natural overflow valve for a "we love museums" day, and they\'re walk-in, so they don\'t belong on this planned list. Not on your itinerary; just know they\'re there.</div>';
+  html += '</div></div>';
+
+  html += '<div class="foot">Add to Home Screen for a full-screen app · DC 250</div>';
+
+  document.getElementById('app').innerHTML = html;
+  window.scrollTo(0, 0);
+}
+
+document.getElementById('app').addEventListener('click', function(e){
+  const tab = e.target.closest('[data-tab]');
+  if(tab){ activeDay = parseInt(tab.getAttribute('data-tab'), 10); render(); return; }
+  const tip = e.target.closest('[data-tip]');
+  if(tip){ const k = tip.getAttribute('data-tip'); openTips[k] = !openTips[k]; render(); }
+});
+
+render();
+</script>
+</body>
+</html>
