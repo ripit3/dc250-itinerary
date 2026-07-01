@@ -106,6 +106,7 @@ const DAYS = [
       {
         time: "10:35 AM",
         title: "Fly MCO → IAD",
+        dur: 140,
         subtitle: "Frontier F9 4230 · Arrive 12:53 PM",
         type: "travel",
         icon: "✈️",
@@ -114,6 +115,7 @@ const DAYS = [
       {
         time: "2:45 PM",
         title: "Check in: Grand Hyatt Washington",
+        dur: 30,
         subtitle: "1000 H Street NW · Drop bags and head out — People's House tickets at 3:30!",
         type: "hotel",
         icon: "🏨",
@@ -124,6 +126,7 @@ const DAYS = [
       {
         time: "3:30 PM",
         title: "The People's House ★",
+        dur: 60,
         subtitle: "BOOKED: A White House experience · 1700 Pennsylvania Ave NW. State-of-the-art interactive exhibits bringing the White House to life — a 3D Oval Office, immersive rooms, and 250 years of history.",
         type: "activity",
         icon: "🏛️",
@@ -135,6 +138,7 @@ const DAYS = [
       {
         time: "8:00 PM",
         title: "Monuments by Moonlight Tour ★",
+        dur: 120,
         subtitle: "Guided evening trolley tour of illuminated monuments. Magical for the whole family — and easy on little legs!",
         type: "activity",
         icon: "🌙",
@@ -154,6 +158,7 @@ const DAYS = [
       {
         time: "8:30 AM",
         title: "🍩 Astro Doughnuts & Fried Chicken",
+        dur: 30,
         subtitle: "1308 G St NW · 5 min walk from hotel. Monthly rotating flavors, incredible crème brûlée & maple bacon doughnuts. Grab a fried chicken biscuit too!",
         type: "food",
         icon: "🍩",
@@ -163,6 +168,7 @@ const DAYS = [
       {
         time: "10:00 AM",
         title: "Museum of the Bible ★",
+        dur: 120,
         subtitle: "Six floors of immersive exhibits, 1,000+ artifacts spanning 4,000 years. Walk across the Red Sea, explore a 1st-century Nazareth village.",
         type: "activity",
         icon: "📖",
@@ -174,6 +180,7 @@ const DAYS = [
       {
         time: "12:00 PM",
         title: "Lunch at Manna — Museum of the Bible",
+        dur: 60,
         subtitle: "On-site restaurant at the Museum of the Bible. Relax and recharge before the Dead Sea Scrolls.",
         type: "food",
         icon: "🍽️",
@@ -182,6 +189,7 @@ const DAYS = [
       {
         time: "1:00 PM",
         title: "Dead Sea Scrolls Exhibit ★",
+        dur: 60,
         subtitle: "BOOKED: 1 PM timed entry. Some of the most significant surviving manuscripts in human history — an extraordinary experience on the eve of America's 250th.",
         type: "activity",
         icon: "📜",
@@ -193,6 +201,7 @@ const DAYS = [
       {
         time: "3:30 PM",
         title: "National Air & Space Museum ★",
+        dur: 150,
         subtitle: "BOOKED: 3 PM timed entry · Freshly renovated for its 50th anniversary! All new galleries open July 1. See the Spirit of St. Louis, Apollo Lunar Module, X-15, and touch a real moon rock.",
         type: "activity",
         icon: "🚀",
@@ -204,6 +213,7 @@ const DAYS = [
       {
         time: "6:00 PM",
         title: "Dinner at the Great American State Fair 🎡",
+        dur: 120,
         subtitle: "National Mall · Graze the 50-state food pavilions — Maine lobster rolls, Texas BBQ, Hawaiian shaved ice, and more. A once-in-250-years experience!",
         type: "food",
         icon: "🌽",
@@ -221,6 +231,7 @@ const DAYS = [
       {
         time: "7:00 AM",
         title: "☕ Tatte Bakery & Cafe",
+        dur: 20,
         subtitle: "Penn Quarter · Grab-and-go pastries, shakshuka, egg sandwiches & excellent coffee. Quick fuel before tee time!",
         type: "food",
         icon: "🥐",
@@ -230,6 +241,7 @@ const DAYS = [
       {
         time: "8:00 AM",
         title: "⛳ Tee Time — East Potomac Golf Links ★",
+        dur: 150,
         subtitle: "BOOKED: Blue Course (Back 9 · most scenic holes) · Hains Point · Cart available onsite · Reservation #425269227. Play golf with the Washington Monument & Jefferson Memorial as your backdrop!",
         type: "activity",
         icon: "⛳",
@@ -241,6 +253,7 @@ const DAYS = [
       {
         time: "10:30 AM",
         title: "🍔 Lunch at The Potomac Grille",
+        dur: 60,
         subtitle: "On-site clubhouse grill at East Potomac. Relaxed, casual, well-earned after your round.",
         type: "food",
         icon: "🍔",
@@ -249,24 +262,16 @@ const DAYS = [
       {
         time: "12:00 PM",
         title: "Quick Break at the Hotel",
+        dur: 60,
         subtitle: "Shower off the golf, change into evening clothes, grab water bottles. Big night ahead!",
         type: "hotel",
         icon: "🏨",
         mapQuery: "Grand Hyatt Washington, 1000 H St NW, Washington DC",
       },
       {
-        time: "2:00 PM",
-        title: "🪖 Arlington National Cemetery — Tomb of the Unknown Soldier ★",
-        subtitle: "Metro to Arlington Cemetery station. Visit the Tomb, witness the Changing of the Guard (every 30 min in summer), JFK gravesite & eternal flame.",
-        type: "activity",
-        icon: "🇺🇸",
-        upgraded: true,
-        mapQuery: "Arlington National Cemetery Welcome Center, Arlington VA",
-        tip: "Cemetery is open until 7 PM in summer. The Changing of the Guard happens every 30 minutes April–September — arrive 15 min early for a good spot. Also visit JFK's gravesite with the eternal flame and Arlington House (Robert E. Lee's former home). Bring tissues — this is profoundly moving on the eve of America's birthday. The tram tour ($15/person, kids under 4 free) covers all major sites — last departure is at 4:00 PM and returns at 5:00 PM.",
-      },
-      {
         time: "5:30 PM",
         title: "Dinner at Founding Farmers DC ★",
+        dur: 90,
         subtitle: "1924 Pennsylvania Ave NW · Farm-to-table American with AC. Stellar kids menu — a perfect pre-concert dinner.",
         type: "food",
         icon: "🌾",
@@ -278,6 +283,7 @@ const DAYS = [
       {
         time: "8:00 PM",
         title: "🎵 A Capitol Fourth — DRESS REHEARSAL ★",
+        dur: 120,
         subtitle: "West Lawn of the U.S. Capitol. The FULL concert with National Symphony Orchestra and celebrity performers — but far less crowded than July 4!",
         type: "activity",
         icon: "🎻",
@@ -294,8 +300,9 @@ const DAYS = [
     color: "#BF0A30",
     events: [
       {
-        time: "7:30 AM",
+        time: "8:00 AM",
         title: "🧇 Lincoln's Waffle Shop",
+        dur: 20,
         subtitle: "504 10th St NW · 6 min walk. A no-frills DC legend near Ford's Theatre. Famous banana pancakes, crispy waffles & big diner breakfasts at great prices.",
         type: "food",
         icon: "🥞",
@@ -305,6 +312,7 @@ const DAYS = [
       {
         time: "8:30 AM",
         title: "Get to National Archives Steps EARLY",
+        dur: 90,
         subtitle: "Walk/Metro to the Archives. Find a spot on or near the steps for the reading ceremony.",
         type: "activity",
         icon: "📍",
@@ -314,6 +322,7 @@ const DAYS = [
       {
         time: "10:00 AM",
         title: "Declaration of Independence Reading Ceremony",
+        dur: 45,
         subtitle: "On the steps of the National Archives. Re-enactors, historical figures, and the ceremonial reading — expanded for the 250th with sign language and translations.",
         type: "activity",
         icon: "🔔",
@@ -323,6 +332,7 @@ const DAYS = [
       {
         time: "11:00 AM",
         title: "National Archives — Declaration of Independence ★",
+        dur: 45,
         subtitle: "BOOKED: 11 AM timed entry. See the ORIGINAL Declaration on its 250th birthday. New \"Free and Independent\" exhibition with rare artifacts.",
         type: "activity",
         icon: "📜",
@@ -334,6 +344,7 @@ const DAYS = [
       {
         time: "11:45 AM",
         title: "July 4th Parade",
+        dur: 60,
         subtitle: "Watch from near the National Archives Museum along Constitution Ave.",
         type: "activity",
         icon: "🥁",
@@ -342,6 +353,7 @@ const DAYS = [
       {
         time: "1:30 PM",
         title: "Arrive at the U.S. Capitol",
+        dur: 60,
         subtitle: "Arrive 60 minutes early per instructions from your State Representative's office. Allow time for security screening and check-in.",
         type: "activity",
         icon: "🏛️",
@@ -351,6 +363,7 @@ const DAYS = [
       {
         time: "2:30 PM",
         title: "U.S. Capitol Building Tour ★",
+        dur: 90,
         subtitle: "BOOKED: Private tour arranged through your State Representative's office. An extraordinary behind-the-scenes experience on America's 250th birthday.",
         type: "activity",
         icon: "🇺🇸",
@@ -362,6 +375,7 @@ const DAYS = [
       {
         time: "5:30 PM",
         title: "Stake Out Fireworks Spot",
+        dur: 90,
         subtitle: "Head to the National Mall early. The area between the Washington Monument and Lincoln Memorial offers the best views.",
         type: "activity",
         icon: "📍",
@@ -371,6 +385,7 @@ const DAYS = [
       {
         time: "7:00 PM",
         title: "Salute to America 250 — Evening Celebrations ★",
+        dur: 180,
         subtitle: "Headline performances, military flyovers, musical acts, and decade-spanning entertainment on the National Mall.",
         type: "activity",
         icon: "🎵",
@@ -378,8 +393,9 @@ const DAYS = [
         mapQuery: "National Mall, Washington DC",
       },
       {
-        time: "9:00 PM+",
+        time: "10:30 PM+",
         title: "250th Anniversary Fireworks ★",
+        dur: 40,
         subtitle: "The largest fireworks display in American history. Launched from both sides of the Reflecting Pool. This is the moment.",
         type: "activity",
         icon: "🎆",
@@ -398,6 +414,7 @@ const DAYS = [
       {
         time: "9:00 AM",
         title: "🥐 maman — Penn Quarter",
+        dur: 60,
         subtitle: "Charming French-American café in the heart of old downtown. Famous nutty chocolate chip cookie, pastries, egg sandwiches & lattes.",
         type: "food",
         icon: "🍪",
@@ -414,6 +431,7 @@ const DAYS = [
       {
         time: "1:00 PM",
         title: "Washington Nationals vs. Pittsburgh Pirates ★",
+        dur: 180,
         subtitle: "BOOKED: Nationals Park · 1500 S Capitol St SE. America's pastime on the day after America's 250th — a perfect family afternoon.",
         type: "activity",
         icon: "⚾",
@@ -423,8 +441,9 @@ const DAYS = [
         tip: "Nationals Park has great food options beyond the usual ballpark fare — look for the crab cake stand and the local DC vendors along the concourse. The kids can track the game on the scoreboard and cheer for the Nats!",
       },
       {
-        time: "4:30 PM",
+        time: "5:30 PM",
         title: "Dinner near Navy Yard / The Wharf",
+        dur: 90,
         subtitle: "Post-game dinner near the ballpark or a short walk to The Wharf. Plenty of family-friendly options — nothing booked, keep it flexible based on energy.",
         type: "food",
         icon: "🍽️",
@@ -442,6 +461,7 @@ const DAYS = [
       {
         time: "8:00 AM",
         title: "🍩 Good Doughnuts & Café — Penn Quarter",
+        dur: 20,
         subtitle: "Full breakfast menu plus incredible doughnuts, coffee, and pastries. A perfect last-morning treat before heading home.",
         type: "food",
         icon: "🍩",
@@ -451,6 +471,7 @@ const DAYS = [
       {
         time: "10:00 AM",
         title: "Check Out: Grand Hyatt Washington",
+        dur: 5,
         subtitle: "Store luggage with the bell desk — you have the whole morning before the airport.",
         type: "hotel",
         icon: "🏨",
@@ -459,6 +480,7 @@ const DAYS = [
       {
         time: "12:00 PM",
         title: "Lunch at Old Ebbitt Grill",
+        dur: 90,
         subtitle: "675 15th St NW · DC's most iconic restaurant, steps from the White House. Classic American fare, oysters & cold beer in a gorgeous Victorian setting.",
         type: "food",
         icon: "🦪",
@@ -476,6 +498,7 @@ const DAYS = [
       {
         time: "3:30 PM",
         title: "Head to IAD",
+        dur: 90,
         subtitle: "Allow 90 min to get to Dulles — direct Uber from the Mall (~45 min) or Metro Silver Line.",
         type: "travel",
         icon: "🚗",
@@ -485,6 +508,7 @@ const DAYS = [
       {
         time: "7:18 PM",
         title: "Fly IAD → MCO",
+        dur: 147,
         subtitle: "Frontier F9 4355 · Arrive 9:45 PM EDT",
         type: "travel",
         icon: "✈️",
@@ -494,6 +518,15 @@ const DAYS = [
   },
 ];;
 const FLEXIBLE = [
+  {
+    icon: "🇺🇸",
+    title: "Arlington National Cemetery — Tomb of the Unknown Soldier ★",
+    from: "was Fri July 3, 2:00 PM",
+    subtitle: "Metro to Arlington Cemetery station. Visit the Tomb, witness the Changing of the Guard (every 30 min in summer), JFK gravesite & eternal flame.",
+    mapQuery: "Arlington National Cemetery Welcome Center, Arlington VA",
+    status: "No ticket to enter — cemetery open until 7 PM in summer. Optional tram tour ($15/person, kids under 4 free) covers all major sites; last departure 4:00 PM, returns 5:00 PM. Changing of the Guard every 30 min April–September; arrive 15 min early.",
+    slot: "Allow 2–3 hours; best as a standalone afternoon. Fits an open window — Sun July 5 morning or the Mon July 6 open block. Bring tissues — profoundly moving on the eve of America's 250th.",
+  },
   {
     icon: "🏛️",
     title: "Lincoln Memorial + NEW Undercroft Museum ★",
@@ -543,12 +576,12 @@ const CHECKLIST = [
   { text: "Washington Monument — Flex option, booking window opens June 6 at 10 AM ET (recreation.gov)", booked: false },
   { text: "Grand Hyatt Washington — hotel reservation (July 1–6)", booked: true },
   { text: "The People's House — 3:30 PM (July 1)", booked: true },
-  { text: "Old Ebbitt Grill — dinner (July 1)", booked: true },
+  { text: "Old Ebbitt Grill — lunch (July 6)", booked: true },
   { text: "Monuments by Moonlight Tour — evening (July 1)", booked: true },
   { text: "Museum of the Bible — tickets + Dead Sea Scrolls (July 2)", booked: true },
   { text: "National Air & Space Museum — 3 PM timed entry (July 2)", booked: true },
   { text: "East Potomac Golf — Blue Course, Back 9, 8:00 AM with cart (July 3)", booked: true },
-  { text: "Arlington Cemetery Tram Tour — arlingtontours.com (July 3)", booked: false },
+  { text: "Arlington Cemetery Tram Tour — arlingtontours.com (Flex option)", booked: false },
   { text: "Founding Farmers — dinner (July 3)", booked: true },
   { text: "National Archives — 11 AM timed entry (July 4)", booked: true },
   { text: "U.S. Capitol Building Tour — 2:30 PM via State Rep's office (July 4)", booked: true },
@@ -560,7 +593,7 @@ const CHECKLIST = [
 const FLEX_COLOR = "#C084FC";
 const mapsUrl = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
 
-// --- Time-aware graying: an event dims once the NEXT timeslot has begun ---
+// --- Time-aware graying: an event dims once it's over ---
 // Parse an event's start into a real Date on its day (July 2026, device-local time).
 // "Open until ..." flex blocks have no fixed start, so they never act as a trigger.
 function eventStart(ev, day){
@@ -571,18 +604,27 @@ function eventStart(ev, day){
   if(/PM/i.test(m[3])) h += 12;
   return new Date(2026, 6, day, h, parseInt(m[2],10), 0, 0);
 }
-// graysAt[dayIdx][evIdx] = Date the event dims (start of the next real slot), or null (never).
+// graysAt[dayIdx][evIdx] = the EARLIER of (its own end = start + ev.dur minutes) and
+// (the next real slot's start). Events with no start/dur fall back to the next slot; the
+// final event of the trip dims at its own end. null = never dims.
 const graysAt = (function(){
   const flat = [];
   DAYS.forEach((d, di) => {
     const day = parseInt(d.date.split(", ")[1].split(" ")[1], 10);
-    d.events.forEach((ev, ei) => flat.push({di, ei, start: eventStart(ev, day)}));
+    d.events.forEach((ev, ei) => {
+      const s = eventStart(ev, day);
+      const end = (s && ev.dur) ? new Date(s.getTime() + ev.dur*60000) : null;
+      flat.push({di, ei, start: s, end: end});
+    });
   });
   const out = DAYS.map(d => d.events.map(() => null));
   for(let i=0;i<flat.length;i++){
-    for(let j=i+1;j<flat.length;j++){
-      if(flat[j].start){ out[flat[i].di][flat[i].ei] = flat[j].start; break; }
-    }
+    let nextStart = null;
+    for(let j=i+1;j<flat.length;j++){ if(flat[j].start){ nextStart = flat[j].start; break; } }
+    const own = flat[i].end;
+    out[flat[i].di][flat[i].ei] =
+      (own && nextStart) ? (own.getTime() <= nextStart.getTime() ? own : nextStart)
+                         : (own || nextStart);
   }
   return out;
 })();
