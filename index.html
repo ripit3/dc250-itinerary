@@ -44,7 +44,9 @@
   .dayhead h2 { font-size: 22px; font-weight: 700; margin: 0 0 2px; color: #fff; }
   .dayhead .dd { font-size: 13px; color: #94B8D4; }
   .timeline { padding: 8px 20px 20px; }
-  .row { display: flex; gap: 12px; }
+  .row { display: flex; gap: 12px; transition: opacity .35s ease; }
+  .row.past { opacity: .4; }
+  .row.past .card { filter: grayscale(75%); }
   .tcol { display: flex; flex-direction: column; align-items: center; width: 52px; flex-shrink: 0; }
   .ttime { font-size: 12px; font-weight: 600; color: #CBD5E1; text-align: center; line-height: 1.2; margin-bottom: 6px; min-height: 28px; display: flex; align-items: center; }
   .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
@@ -566,6 +568,33 @@ const CHECKLIST = [
 const FLEX_COLOR = "#C084FC";
 const mapsUrl = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
 
+// --- Time-aware graying: an event dims once the NEXT timeslot has begun ---
+// Parse an event's start into a real Date on its day (July 2026, device-local time).
+// "Open until ..." flex blocks have no fixed start, so they never act as a trigger.
+function eventStart(ev, day){
+  if(ev.type === "flexnote") return null;
+  const m = ev.time.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+  if(!m) return null;
+  let h = parseInt(m[1],10) % 12;
+  if(/PM/i.test(m[3])) h += 12;
+  return new Date(2026, 6, day, h, parseInt(m[2],10), 0, 0);
+}
+// graysAt[dayIdx][evIdx] = Date the event dims (start of the next real slot), or null (never).
+const graysAt = (function(){
+  const flat = [];
+  DAYS.forEach((d, di) => {
+    const day = parseInt(d.date.split(", ")[1].split(" ")[1], 10);
+    d.events.forEach((ev, ei) => flat.push({di, ei, start: eventStart(ev, day)}));
+  });
+  const out = DAYS.map(d => d.events.map(() => null));
+  for(let i=0;i<flat.length;i++){
+    for(let j=i+1;j<flat.length;j++){
+      if(flat[j].start){ out[flat[i].di][flat[i].ei] = flat[j].start; break; }
+    }
+  }
+  return out;
+})();
+
 let activeDay = 0;
 const openTips = {};
 
@@ -579,6 +608,8 @@ function eventCard(ev, idx){
   const dotBorder = isFlexNote ? FLEX_COLOR : (ev.upgraded ? "#FFD700" : "rgba(255,255,255,.3)");
   const dotShadow = ev.upgraded ? "0 0 8px rgba(255,215,0,.5)" : (isFlexNote ? "0 0 8px rgba(192,132,252,.5)" : "none");
   const last = idx === DAYS[activeDay].events.length - 1;
+  const graysTs = graysAt[activeDay][idx];
+  const isPast = graysTs && Date.now() >= graysTs.getTime();
   let cls = "card"; if(isFlexNote) cls += " flex"; else if(ev.upgraded) cls += " up"; else if(ev.booked) cls += " bk";
 
   let chips = "";
@@ -591,7 +622,7 @@ function eventCard(ev, idx){
   }
   let tipHtml = (ev.tip && open) ? '<div class="tipbody sys">💡 '+ev.tip+'</div>' : '';
 
-  return '<div class="row">'
+  return '<div class="row'+(isPast?' past':'')+'" data-grays="'+(graysTs?graysTs.getTime():'')+'">'
     + '<div class="tcol"><div class="ttime">'+ev.time+'</div>'
     + '<div class="dot" style="background:'+dotColor+';border:2px solid '+dotBorder+';box-shadow:'+dotShadow+'"></div>'
     + (last ? '' : '<div class="line"></div>') + '</div>'
@@ -682,6 +713,18 @@ document.getElementById('app').addEventListener('click', function(e){
   const tip = e.target.closest('[data-tip]');
   if(tip){ const k = tip.getAttribute('data-tip'); openTips[k] = !openTips[k]; render(); }
 });
+
+// Re-evaluate graying in place (no re-render) so it stays current without
+// scrolling to top or collapsing any open tips.
+function refreshPast(){
+  const now = Date.now();
+  document.querySelectorAll('#app .row[data-grays]').forEach(function(r){
+    const g = r.getAttribute('data-grays');
+    r.classList.toggle('past', !!g && now >= +g);
+  });
+}
+setInterval(refreshPast, 60000);
+document.addEventListener('visibilitychange', function(){ if(!document.hidden) refreshPast(); });
 
 render();
 </script>
