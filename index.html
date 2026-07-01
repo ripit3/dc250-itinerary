@@ -704,14 +704,14 @@ function render(){
   html += '<div class="foot">Add to Home Screen for a full-screen app · DC 250</div>';
 
   document.getElementById('app').innerHTML = html;
-  window.scrollTo(0, 0);
 }
 
 document.getElementById('app').addEventListener('click', function(e){
   const tab = e.target.closest('[data-tab]');
-  if(tab){ activeDay = parseInt(tab.getAttribute('data-tab'), 10); render(); return; }
+  // Switching days jumps to the top; toggling a tip preserves your scroll position.
+  if(tab){ activeDay = parseInt(tab.getAttribute('data-tab'), 10); render(); window.scrollTo(0, 0); return; }
   const tip = e.target.closest('[data-tip]');
-  if(tip){ const k = tip.getAttribute('data-tip'); openTips[k] = !openTips[k]; render(); }
+  if(tip){ const y = window.scrollY; const k = tip.getAttribute('data-tip'); openTips[k] = !openTips[k]; render(); window.scrollTo(0, y); }
 });
 
 // Re-evaluate graying in place (no re-render) so it stays current without
